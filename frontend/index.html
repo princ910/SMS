@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>School Management System - Login</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .login-container {
+            background: white;
+            padding: 40px;
+            border-radius: 20px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+            width: 100%;
+            max-width: 450px;
+        }
+
+        .login-header {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .login-header i {
+            font-size: 60px;
+            color: #4e73df;
+            margin-bottom: 15px;
+        }
+
+        .login-header h2 {
+            color: #333;
+            font-size: 28px;
+            margin-bottom: 10px;
+        }
+
+        .login-header p {
+            color: #666;
+            font-size: 14px;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group input {
+            width: 100%;
+            padding: 12px 15px;
+            border: 2px solid #e1e5eb;
+            border-radius: 10px;
+            font-size: 16px;
+            transition: all 0.3s;
+        }
+
+        .form-group input:focus {
+            outline: none;
+            border-color: #4e73df;
+        }
+
+        .login-btn {
+            width: 100%;
+            padding: 12px;
+            background: #4e73df;
+            color: white;
+            border: none;
+            border-radius: 10px;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .login-btn:hover {
+            background: #224abe;
+            transform: translateY(-2px);
+        }
+
+        .demo-credentials {
+            margin-top: 20px;
+            padding: 15px;
+            background: #f8f9fc;
+            border-radius: 10px;
+            font-size: 13px;
+            text-align: center;
+        }
+
+        .demo-credentials p {
+            margin: 5px 0;
+        }
+
+        .error-message {
+            color: #e74a3b;
+            text-align: center;
+            margin-top: 10px;
+            font-size: 14px;
+        }
+
+        .loading-spinner {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.7);
+            z-index: 9999;
+            display: none;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .spinner {
+            width: 50px;
+            height: 50px;
+            border: 5px solid #f3f3f3;
+            border-top: 5px solid #4e73df;
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+    </style>
+</head>
+<body>
+    <div class="login-container">
+        <div class="login-header">
+            <i class="fas fa-school"></i>
+            <h2>School Management System</h2>
+            <p>Login to access your dashboard</p>
+        </div>
+        <form id="loginForm">
+            <div class="form-group">
+                <input type="text" id="username" placeholder="Username" required autocomplete="off">
+            </div>
+            <div class="form-group">
+                <input type="password" id="password" placeholder="Password" required>
+            </div>
+            <button type="submit" class="login-btn">
+                <i class="fas fa-sign-in-alt"></i> Login
+            </button>
+            <div class="error-message" id="loginError"></div>
+        </form>
+        <!-- <div class="demo-credentials">
+            <p><i class="fas fa-info-circle"></i> Demo Credentials:</p>
+            <p><strong>Admin:</strong> admin / admin123</p>
+            <p><strong>Teacher:</strong> teacher / teacher123</p>
+            <p><strong>Student:</strong> student / student123</p>
+            <p><strong>Reception:</strong> reception / reception123</p>
+            <p><strong>Accountant:</strong> accountant / accountant123</p>
+        </div> -->
+    </div>
+
+    <div id="loadingSpinner" class="loading-spinner">
+        <div class="spinner"></div>
+    </div>
+
+    <script src="js/app.js"></script>
+</body>
+</html>
